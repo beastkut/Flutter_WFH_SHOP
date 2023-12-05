@@ -103,19 +103,22 @@ class DetailsPage extends StatelessWidget {
                         ],
                       ),
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            ' ${item.discount} off!',
-                            style: GoogleFonts.raleway(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.yellow[800]
-                            ),
-                          ),
-                        ],
-                      ),
+                      item.discount == '0'
+                          ? const SizedBox()
+                          : Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                ' ${item.discount} off!',
+                               style: GoogleFonts.raleway(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.yellow[800]
+                                ),
+                              ),
+                              ],
+                         ),
+
 
                       const SizedBox(height: 10,),
 

@@ -4,6 +4,7 @@ import 'package:wfh_shop/component/category_tile.dart';
 import 'package:wfh_shop/component/item_tile.dart';
 import 'package:wfh_shop/models/category.dart';
 import 'package:wfh_shop/models/item.dart';
+import 'package:wfh_shop/pages/category_pages_controller.dart';
 import 'package:wfh_shop/pages/details_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -49,6 +50,10 @@ class HomePage extends StatelessWidget {
   // navigate to item details page
    void navigateToItemDetails(BuildContext context,int index){
      Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailsPage(item: itemList[index],)));
+   }
+
+   void navigateCategoryPageController(BuildContext context,int index){
+     Navigator.push(context, MaterialPageRoute(builder: (context)=> CategoryPagesController(index: index)));
    }
 
   @override
@@ -139,7 +144,9 @@ class HomePage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: categoryList.length,
                   itemBuilder: (context,index) => CategoryTile(
-                      catergory: categoryList[index]
+                      category: categoryList[index],
+                      onTap: () => navigateCategoryPageController(context, index),
+                      
                   ),
                 ),
               ),

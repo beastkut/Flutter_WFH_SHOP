@@ -49,7 +49,7 @@ class ItemTile extends StatelessWidget {
                       ),
                   ),
 
-                  SizedBox(width: 5,),
+                  const SizedBox(width: 5,),
 
                   Text(
                     ' ${item.discount} off!',
